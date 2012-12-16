@@ -1,0 +1,20 @@
+div {
+    text-align: center;
+}
+
+#msg {
+    font-size: 2em;
+    font-family: Verdana;
+    height: 6em;
+}
+
+img {
+    border: 2px solid black;
+    /* display: block; */
+    margin: 5px;
+}
+
+body {
+    background-color: #3d3d3d;
+}
+
