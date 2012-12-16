@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Rock Paper Scissors! </title>
+    <script>
+        var choices = ["rock", "paper", "scissors"];
+
+        function judge(yourChoice, computerChoice) {
+            if (yourChoice === "rock") {
+                if (computerChoice === "rock") {
+                    return "Tie!";
+                }
+                if (computerChoice === "scissors") {
+                    return "You win!";
+                }
+                if (computerChoice === "paper") {
+                    return("You lose!");
+                }
+            } else if (yourChoice === "paper") {
+                if (computerChoice === "rock") {
+                    return("You win!");
+                }
+                if (computerChoice === "scissors") {
+                    return("You lose!");
+                }
+                if (computerChoice === "paper") {
+                    return("Tie!");
+                }
+            } else if (yourChoice === "scissors") {
+                if (computerChoice === "rock") {
+                    return("You lose!");
+                }
+                if (computerChoice === "scissors") {
+                    return("Tie!");
+                }
+                if (computerChoice === "paper") {
+                    return("You win!")
+                }
+            } else {
+                return("Wait what?")
+            }
+        }
+
+        function play(choice) {
+            var computerChoice = choices[Math.floor(Math.random() * 3)];
+            var result = judge(choice, computerChoice);
+            var msg = "You picked " + choice + "!" + "<br/>" +
+                      "Computer picked " + computerChoice + "!" + "<br/>" +
+                      result;
+            var e = document.getElementById("msg");
+            e.innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <div id="msg"> Choose an item! </div>
+    <br/>
+    <a href="javascript:play('rock');"><img src="images/rock.png" alt="rock" width="100" height="100"/></a>
+    <a href="javascript:play('paper');"><img src="images/paper.png" alt="paper" width="100" height="100"/></a>
+    <a href="javascript:play('scissors');"><img src="images/scissors.png" alt="scissors" width="100" height="100"/></a>
+</body>
+</html>
