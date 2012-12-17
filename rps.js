@@ -1,4 +1,7 @@
 var choices = ["rock", "paper", "scissors"];
+var wins = 0;
+var losses = 0;
+var ties = 0;
 
 function judge(playerChoice, computerChoice) {
     if (playerChoice === "rock") {
@@ -44,4 +47,16 @@ function play(playerChoice) {
               result;
     var e = document.getElementById("msg");
     e.innerHTML = msg;
+    if (result === "You win!") {
+      wins = wins + 1;
+    } else if (result === "You lose!") {
+      losses = losses + 1;
+    } else if (result === "Tie!") {
+      ties = ties + 1;
+    } 
+    document.getElementById("wins").innerHTML = "" + wins;
+      
+    document.getElementById("losses").innerHTML = "" + losses;
+
+    document.getElementById("ties").innerHTML = "" + ties;
 }
